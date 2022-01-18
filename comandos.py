@@ -1,16 +1,18 @@
 from classes import Cliente,Consultor, Contrato
 
 s=None
-contratos=[]
-clientes = []
-consultores = []
+contratos={}
+clientes = {}
+consultores = {}
 
 #Bloco de funções do Menu principal
 def post_consultor():
     username = input("Username\n")
     password = input("Password\n")
 
-    consultores.append(Consultor(username, password))
+    newConsultor = Consultor(username, password)
+
+    consultores[f"{newConsultor.id}"] = newConsultor
 
     print("Consultor adicionado ao sistema!")
     return None
@@ -19,7 +21,9 @@ def put_cliente():
     username = input("Username\n")
     password = input("Password\n")
 
-    clientes.append(Cliente(username, password))
+    newCliente = Cliente(username, password)
+
+    clientes[f"{newCliente.id}"] = newCliente
     
     print("Cliente adicionado ao sistema!")
     return None
