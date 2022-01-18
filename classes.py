@@ -16,14 +16,14 @@ id_generator = IdGenerator()
 
 class Contrato:
 
-    def __init__(self, title, end_period, description = '',associates=''):
+    def __init__(self, title, end_period, description, associates):
         """Essa classe é responsável por inicializar uma instância 
         de um Contrato, dado um certo título (Nome do Projeto), data de termino, descrição, consultor e cliente."""
         ### INICIALIZA A CLASSE DOS CONTRATOS DO SISTEMA
-        self.title = int(title) 
+        self.title = title 
         self.associates = associates 
         self.description = description
-        self.id = f'C{id_generator.generate()}' #Este C indica que é um Contrato
+        self.id = f'Cont{id_generator.generate()}' #Este Cont indica que é um Contrato
         self.created_dt = f'{datetime.datetime.now()}'
         self.end_period = end_period
         self.concluded = 0
@@ -35,9 +35,9 @@ class Contrato:
         print("Title:",str(self.title))
         for i in self.associates: 
             ###Ao efetuar essa operação, o código não mostra os associados do contrato, mas não sei o motivo.
-            print("Associates:",i)
+            print(f"Associate: {i}")
         print('\n',self.description)
-        print('Concluded',str(self.concluded))
+        print('Concluded')
         return None
     
     def conclude_contract(self): 
@@ -80,7 +80,7 @@ class Consultor(User):
     def __init__(self,username,password):
         super().__init__(username,password)
         self.status = 'Consultant'
-        self.id = f'C{id_generator.generate()}' #Este C indica que é um Consultor
+        self.id = f'Cons{id_generator.generate()}' #Este Cons indica que é um Consultor
         self.projects = []
 
 
@@ -88,5 +88,5 @@ class Cliente(User):
     def __init__(self,username,password):
         super().__init__(username,password)
         self.status = 'Client'
-        self.id = f'C{id_generator.generate()}' #Este C indica que é um Cliente
+        self.id = f'Cli{id_generator.generate()}' #Este Cli indica que é um Cliente
         self.contracts = []
