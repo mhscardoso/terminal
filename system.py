@@ -11,11 +11,11 @@ def menu():
         "(s)Sair do Sistema\n")
         inp = int(input())
         if inp == 1:post_consultor()
-        if inp == 2:put_cliente()
-        if inp == 3:get_contrato()
-        if inp == 4:get_consultores()
-        if inp == 5: get_consultor()
-        if inp == s:break
+        elif inp == 2:put_cliente()
+        elif inp == 3:get_contrato()
+        elif inp == 4:get_consultores()
+        elif inp == 5: get_consultor()
+        elif inp == s:break
         else:print('Comando Inválido')
 
 menu()
