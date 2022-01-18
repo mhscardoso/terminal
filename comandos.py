@@ -54,11 +54,15 @@ def put_contrato():
 def get_consultores():
     print("Consultor Log")
     for consultor in consultores.values():
-        consultor.view()
+
+        user = input("User: ")
+        pass_user = input("User Pass: ")
+
+        consultor.view(user, pass_user)
     print("----------------------------")
 
 def get_consultor():
     print("Consultor Log")
-    id = int(input("Id do consultor"))
-    consultores[id].view()
+    id = (input("Id do consultor"))
+    consultores[id].view(consultores[id].username, consultores[id].password)
     print("----------------------------")
