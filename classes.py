@@ -77,16 +77,16 @@ class User:
         print("Error, invalid user")
 
 class Consultor(User):
-    def __init__(self,username,password):
-        super.__init__(username,password)
+    def __init__(self, username, password):
+        super().__init__(username, password)
         self.status = 'Consultant'
         self.id = f'C{id_generator.generate()}' #Este C indica que é um Consultor
         self.projects = []
         return None
 
 class Cliente:
-    def __init__(self,username,password):
-        super().__init__(username,password)
+    def __init__(self, username, password):
+        super().__init__(username, password)
         self.status = 'Client'
         self.id = f'C{id_generator.generate()}' #Este C indica que é um Cliente
         self.contracts = []
